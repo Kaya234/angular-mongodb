@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiURL: 'https://river-spice-blouse.glitch.me/courses/'
+  apiURL: 'https://far-lava-calendula.glitch.me/courses/'
 };
