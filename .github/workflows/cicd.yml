@@ -16,11 +16,13 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+      - name: Install angular
+        run: npm install @angular/cli
 
       - name: prepare
-        run: ng build
+        run: ./node_modules/.bin/ng build -prod
       - name: serve
-        run: ng serve --port 4401
+        run: ./node_modules/.bin/ng serve --port 4401
 
       - name: Run testcafe tests
         run: testcafe chrome test
