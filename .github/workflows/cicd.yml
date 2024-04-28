@@ -20,7 +20,7 @@ jobs:
         run: npm install @angular/cli
 
       - name: prepare
-        run: ./node_modules/.bin/ng build -prod
+        run: ./node_modules/.bin/ng build
       - name: serve
         run: ./node_modules/.bin/ng serve --port 4401
 
