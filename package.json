@@ -1,10 +1,10 @@
 {
   "name": "courses-page-angular-mongodb",
-  "type":"module",
+  "type": "module",
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "dev": "ng serve",
+    "dev": "ng serve --port 4401",
     "build": "ng build --configuration production --base-href=https://kaya234.github.io/angular-mongodb/",
     "watch": "ng build --watch --configuration development",
     "api": "node server/server.js",
@@ -30,6 +30,7 @@
     "mongodb": "4.1",
     "popper.js": "^1.16.1",
     "rxjs": "~7.5.0",
+    "testcafe": "^3.6.0",
     "tslib": "^2.6.2",
     "zone.js": "~0.12.0"
   },

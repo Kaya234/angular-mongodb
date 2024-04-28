@@ -1,0 +1,32 @@
+name: ci cd
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+jobs:
+  build:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: prepare
+        run: ng build
+      - name: serve
+        run: ng serve --port 4401
+
+      - name: Run testcafe tests
+        run: testcafe chrome test
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: report
+          path: report/
+          retention-days: 30
