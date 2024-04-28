@@ -22,7 +22,7 @@ jobs:
       - name: prepare
         run: ./node_modules/.bin/ng build
       - name: serve
-        run: ./node_modules/.bin/ng serve --port 4401
+        run: ./node_modules/.bin/ng serve --port 4401 &
 
       - name: Run testcafe tests
         run: testcafe chrome test
