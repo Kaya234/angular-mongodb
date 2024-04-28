@@ -25,7 +25,7 @@ jobs:
         run: ./node_modules/.bin/ng serve --port 4401 &
 
       - name: Run testcafe tests
-        run: testcafe chrome test
+        run: npx testcafe chrome test
       - uses: actions/upload-artifact@v3
         if: always()
         with:
