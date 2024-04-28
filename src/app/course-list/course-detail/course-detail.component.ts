@@ -17,7 +17,10 @@ export class CourseDetailComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
 
     const _id: string | null = this.actRoute.snapshot.paramMap.get('id');
+
+  if ( typeof _id === 'string') {
     this.subscription = this.coursesService.getCourse(_id!).subscribe(data => this.course = data);
+  }
 
   }
 
